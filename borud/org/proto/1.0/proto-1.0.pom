@@ -12,7 +12,13 @@
   <properties>
     <!-- github server corresponds to entry in ~/.m2/settings.xml -->
     <github.global.server>github</github.global.server>
+
+    <!-- The name of github repository used as a Maven repository -->
     <repository.name>repository</repository.name>
+
+    <!-- The github username owning the repository used as a Maven repository -->
+    <repository.owner>borud</repository.owner>
+
     <site.maven.plugin.version>0.11</site.maven.plugin.version>
   </properties>
 
@@ -33,13 +39,13 @@
 	<version>${site.maven.plugin.version}</version>
 	<configuration>
 	  <server>${github.global.server}</server>
-	  <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-	  <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-	  <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-	  <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+	  <message>Maven artifacts for ${project.version}</message>
+	  <noJekyll>true</noJekyll>
+	  <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+	  <branch>refs/heads/mvn-repo</branch>
 	  <includes><include>**/*</include></includes>
-	  <repositoryName>${repository.name}</repositoryName>      <!-- github repo name -->
-	  <repositoryOwner>borud</repositoryOwner>    <!-- github username  -->
+	  <repositoryName>${repository.name}</repositoryName>
+	  <repositoryOwner>${repository.owner}</repositoryOwner>
 	</configuration>
 	<executions>
 	  <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
