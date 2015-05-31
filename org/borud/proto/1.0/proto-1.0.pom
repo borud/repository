@@ -4,7 +4,7 @@
   
   <modelVersion>4.0.0</modelVersion>
  
-  <groupId>borud.org</groupId>
+  <groupId>org.borud</groupId>
   <artifactId>proto</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
